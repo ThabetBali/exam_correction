@@ -5,4 +5,6 @@ def rate_note(note):
         return "acceptable"
     if 13 <= note < 15:
         return "good"
+    if note == 17:
+        return "excellent"
     return "very good"
