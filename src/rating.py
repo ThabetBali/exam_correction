@@ -1,6 +1,4 @@
-def rate_note(param):
-    if param == 8:
-        return "unsuccessful"
-    if param == 9:
+def rate_note(note):
+    if note == 8 or note == 9:
         return "unsuccessful"
     return "acceptable"
