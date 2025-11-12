@@ -10,3 +10,6 @@ def test_rate_note_unsuccessful(note):
 @pytest.mark.parametrize("note", [10, 11, 12])
 def test_rate_note_acceptable(note):
     assert rate_note(note) == "acceptable"
+
+def test_rate_note_13_good():
+    assert rate_note(13) == "good"
