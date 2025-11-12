@@ -3,22 +3,12 @@ import pytest
 from src.rating import rate_note
 
 
-@pytest.mark.parametrize("note", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-def test_rate_note_unsuccessful(note):
-    assert rate_note(note) == "unsuccessful"
-
-@pytest.mark.parametrize("note", [10, 11, 12])
-def test_rate_note_acceptable(note):
-    assert rate_note(note) == "acceptable"
-
-@pytest.mark.parametrize("note", [13, 14])
-def test_rate_note_good(note):
-    assert rate_note(note) == "good"
-
-@pytest.mark.parametrize("note", [15, 16])
-def test_rate_note_very_good(note):
-    assert rate_note(note) == "very good"
-
-@pytest.mark.parametrize("note", [17, 18, 19, 20])
-def test_rate_note_excellent(note):
-    assert rate_note(note) == "excellent"
+@pytest.mark.parametrize("note,expected", [(0, "unsuccessful"), (1, "unsuccessful"), (2, "unsuccessful"),
+                                           (3, "unsuccessful"), (4, "unsuccessful"), (5, "unsuccessful"),
+                                           (6, "unsuccessful"), (7, "unsuccessful"), (8, "unsuccessful"),
+                                           (9, "unsuccessful"), (10, "acceptable"), (11, "acceptable"),
+                                           (12, "acceptable"), (13, "good"), (14, "good"), (15, "very good"),
+                                           (16, "very good"), (17, "excellent"), (18, "excellent"),
+                                           (19, "excellent"), (20, "excellent")])
+def test_rate_note(note, expected):
+    assert rate_note(note) == expected
