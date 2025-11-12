@@ -3,6 +3,6 @@ def rate_note(note):
         return "unsuccessful"
     if 10 <= note < 13:
         return "acceptable"
-    if note == 15:
-        return "very good"
-    return "good"
+    if 13 <= note < 15:
+        return "good"
+    return "very good"
