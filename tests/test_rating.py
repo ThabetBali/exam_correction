@@ -19,8 +19,6 @@ def test_rate_note_good(note):
 def test_rate_note_very_good(note):
     assert rate_note(note) == "very good"
 
-def test_rate_note_17_excellent():
-    assert rate_note(17) == "excellent"
-
-def test_rate_note_18_excellent():
-    assert rate_note(18) == "excellent"
+@pytest.mark.parametrize("note", [17, 18])
+def test_rate_note_excellent(note):
+    assert rate_note(note) == "excellent"
