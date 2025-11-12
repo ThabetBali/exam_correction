@@ -1,2 +1,4 @@
 def rate_note(param):
-    return "unsuccessful"
+    if param == 9:
+        return "unsuccessful"
+    return "acceptable"
