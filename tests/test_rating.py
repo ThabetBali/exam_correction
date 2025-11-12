@@ -13,3 +13,6 @@ def test_rate_note_acceptable(note):
 
 def test_rate_note_13_good():
     assert rate_note(13) == "good"
+
+def test_rate_note_14_good():
+    assert rate_note(14) == "good"
