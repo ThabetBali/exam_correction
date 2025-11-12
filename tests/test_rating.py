@@ -7,9 +7,6 @@ from src.rating import rate_note
 def test_rate_note_unsuccessful(note):
     assert rate_note(note) == "unsuccessful"
 
-
-def test_rate_10_returns_acceptable():
-    assert rate_note(10) == "acceptable"
-
-def test_rate_11_returns_acceptable():
-    assert rate_note(11) == "acceptable"
+@pytest.mark.parametrize("note", [10, 11])
+def test_rate_note_acceptable(note):
+    assert rate_note(note) == "acceptable"
