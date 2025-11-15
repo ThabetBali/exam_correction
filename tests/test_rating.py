@@ -12,3 +12,11 @@ from src.rating import rate_note
                                            (19, "excellent"), (20, "excellent")])
 def test_rate_note(note, expected):
     assert rate_note(note) == expected
+
+@pytest.mark.parametrize("note,expected", [(-1, "Impossible note value. Value must be between 0 and 20."),
+                                           (21, "Impossible note value. Value must be between 0 and 20.")])
+def test_rate_returns_Impossible(note, expected):
+    with pytest.raises(
+        ValueError, match=expected
+    ):
+        rate_note(note)
